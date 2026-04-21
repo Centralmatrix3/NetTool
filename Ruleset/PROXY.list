@@ -1,5 +1,5 @@
 # 规则名称: PROXY
-# 规则统计: 25998
+# 规则统计: 26000
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -15510,6 +15510,7 @@ DOMAIN-SUFFIX,minilondon.ca
 DOMAIN-SUFFIX,minilondon.co
 DOMAIN-SUFFIX,minimarkham.ca
 DOMAIN-SUFFIX,minimarkham.com
+DOMAIN-SUFFIX,minimax.io
 DOMAIN-SUFFIX,minimoncton.ca
 DOMAIN-SUFFIX,minimoncton.com
 DOMAIN-SUFFIX,minimontrealcentre.ca
@@ -19944,6 +19945,7 @@ DOMAIN-SUFFIX,scnsrc.me
 DOMAIN-SUFFIX,scolle.net
 DOMAIN-SUFFIX,scoop.sh
 DOMAIN-SUFFIX,scopus.com
+DOMAIN-SUFFIX,scorecardresearch.com
 DOMAIN-SUFFIX,scoreclassics.com
 DOMAIN-SUFFIX,scorediscounts.club
 DOMAIN-SUFFIX,scoregroup.com

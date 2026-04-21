@@ -1,5 +1,5 @@
 # 规则名称: AdBlock
-# 规则统计: 106380
+# 规则统计: 106381
 
 HOST-SUFFIX,0.myikas.com,AdBlock
 HOST-SUFFIX,0.net.easyjet.com,AdBlock
@@ -8755,6 +8755,7 @@ HOST-SUFFIX,analytics.changiairport.com,AdBlock
 HOST-SUFFIX,analytics.chase.com,AdBlock
 HOST-SUFFIX,analytics.chattarize.de,AdBlock
 HOST-SUFFIX,analytics.chegg.com,AdBlock
+HOST-SUFFIX,analytics.cherry-ai.com,AdBlock
 HOST-SUFFIX,analytics.chilevision.cl,AdBlock
 HOST-SUFFIX,analytics.churchthemes.com,AdBlock
 HOST-SUFFIX,analytics.chvnoticias.cl,AdBlock

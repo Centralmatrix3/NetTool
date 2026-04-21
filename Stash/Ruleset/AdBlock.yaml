@@ -1,5 +1,5 @@
 # 规则名称: AdBlock
-# 规则统计: 106380
+# 规则统计: 106381
 
 payload:
   - '+.0.myikas.com'
@@ -8756,6 +8756,7 @@ payload:
   - '+.analytics.chase.com'
   - '+.analytics.chattarize.de'
   - '+.analytics.chegg.com'
+  - '+.analytics.cherry-ai.com'
   - '+.analytics.chilevision.cl'
   - '+.analytics.churchthemes.com'
   - '+.analytics.chvnoticias.cl'
