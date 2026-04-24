@@ -1,5 +1,5 @@
 # 规则名称: PROXY
-# 规则统计: 26009
+# 规则统计: 26012
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -1678,6 +1678,7 @@ DOMAIN-SUFFIX,agedm.tv
 DOMAIN-SUFFIX,agefans.com
 DOMAIN-SUFFIX,agemys.org
 DOMAIN-SUFFIX,agendaweek.com
+DOMAIN-SUFFIX,agentclientprotocol.com
 DOMAIN-SUFFIX,agilebits.com
 DOMAIN-SUFFIX,agnesb.fr
 DOMAIN-SUFFIX,agoogleaday.com
@@ -18230,6 +18231,7 @@ DOMAIN-SUFFIX,placemyad.com.au
 DOMAIN-SUFFIX,placesdocs.com
 DOMAIN-SUFFIX,planetminecraft.com
 DOMAIN-SUFFIX,planetsuzy.org
+DOMAIN-SUFFIX,plannotator.ai
 DOMAIN-SUFFIX,plansondemand.com
 DOMAIN-SUFFIX,plantsvszombies2.com
 DOMAIN-SUFFIX,plasticlabs.com
@@ -22677,6 +22679,7 @@ DOMAIN-SUFFIX,twister.net.co
 DOMAIN-SUFFIX,twistys.com
 DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,twitchcdn.net
+DOMAIN-SUFFIX,twitchcon.com
 DOMAIN-SUFFIX,twitchsvc.net
 DOMAIN-SUFFIX,twitcomike.jp
 DOMAIN-SUFFIX,twitiq.com
