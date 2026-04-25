@@ -1,5 +1,5 @@
 # 规则名称: PROXY
-# 规则统计: 26012
+# 规则统计: 26013
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -21698,6 +21698,7 @@ DOMAIN-SUFFIX,teatroporno.com
 DOMAIN-SUFFIX,tech-mail.ru
 DOMAIN-SUFFIX,tech26.de
 DOMAIN-SUFFIX,techatbloomberg.com
+DOMAIN-SUFFIX,techbang.com
 DOMAIN-SUFFIX,techcrunch.com
 DOMAIN-SUFFIX,techhub.ms
 DOMAIN-SUFFIX,techliquidators.com

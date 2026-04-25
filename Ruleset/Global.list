@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 7309
+# 规则统计: 7310
 
 DOMAIN,cloud.oracle.com
 DOMAIN,steambroadcast.akamaized.net
@@ -5795,6 +5795,7 @@ DOMAIN-SUFFIX,tdesktop.com
 DOMAIN-SUFFIX,tdm.com.mo
 DOMAIN-SUFFIX,teachparentstech.org
 DOMAIN-SUFFIX,teamamericany.com
+DOMAIN-SUFFIX,techbang.com
 DOMAIN-SUFFIX,technews.tw
 DOMAIN-SUFFIX,techspot.com
 DOMAIN-SUFFIX,techviz.net

@@ -1,5 +1,5 @@
 # 规则名称: GreatFireWall
-# 规则统计: 4203
+# 规则统计: 4204
 
 DOMAIN-SUFFIX,000webhost.com
 DOMAIN-SUFFIX,0rz.tw
@@ -3348,6 +3348,7 @@ DOMAIN-SUFFIX,tbsec.org
 DOMAIN-SUFFIX,tbsn.org
 DOMAIN-SUFFIX,tbssqh.org
 DOMAIN-SUFFIX,teachparentstech.org
+DOMAIN-SUFFIX,techbang.com
 DOMAIN-SUFFIX,technews.tw
 DOMAIN-SUFFIX,techviz.net
 DOMAIN-SUFFIX,teck.in

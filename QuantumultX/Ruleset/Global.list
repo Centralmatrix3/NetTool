@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 7309
+# 规则统计: 7310
 
 HOST,cloud.oracle.com,Global
 HOST,steambroadcast.akamaized.net,Global
@@ -5795,6 +5795,7 @@ HOST-SUFFIX,tdesktop.com,Global
 HOST-SUFFIX,tdm.com.mo,Global
 HOST-SUFFIX,teachparentstech.org,Global
 HOST-SUFFIX,teamamericany.com,Global
+HOST-SUFFIX,techbang.com,Global
 HOST-SUFFIX,technews.tw,Global
 HOST-SUFFIX,techspot.com,Global
 HOST-SUFFIX,techviz.net,Global
