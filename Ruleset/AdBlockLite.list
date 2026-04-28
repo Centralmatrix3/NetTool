@@ -1,5 +1,5 @@
 # 规则名称: AdBlockLite
-# 规则统计: 7616
+# 规则统计: 7619
 
 DOMAIN,118.89.204.198
 DOMAIN,a.wkanx.com
@@ -1283,6 +1283,7 @@ DOMAIN-SUFFIX,advert.api.thejoyrun.com
 DOMAIN-SUFFIX,advertising.com
 DOMAIN-SUFFIX,advertising.yahoo.com
 DOMAIN-SUFFIX,adview.cn
+DOMAIN-SUFFIX,advlion.com
 DOMAIN-SUFFIX,advmob.cn
 DOMAIN-SUFFIX,adwetec.com
 DOMAIN-SUFFIX,adwhirl.com
@@ -6372,6 +6373,7 @@ DOMAIN-SUFFIX,uaqe.cn
 DOMAIN-SUFFIX,ub1.job592.com
 DOMAIN-SUFFIX,ubeeludrt.com
 DOMAIN-SUFFIX,uberads.com
+DOMAIN-SUFFIX,ubixioe.com
 DOMAIN-SUFFIX,ubmcmm.baidustatic.com
 DOMAIN-SUFFIX,ubmcvideo.baidustatic.com
 DOMAIN-SUFFIX,ubudhal.com
@@ -7336,6 +7338,7 @@ DOMAIN-SUFFIX,yumimobi.com
 DOMAIN-SUFFIX,yunjiasu.com
 DOMAIN-SUFFIX,yunpifu.cn
 DOMAIN-SUFFIX,yunqingugm.com
+DOMAIN-SUFFIX,yunxish.com
 DOMAIN-SUFFIX,yuqnyudug.com
 DOMAIN-SUFFIX,yur09111og.com
 DOMAIN-SUFFIX,yur09121og.com
