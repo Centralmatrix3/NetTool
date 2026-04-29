@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 7310
+# 规则统计: 7311
 
 HOST,cloud.oracle.com,Global
 HOST,steambroadcast.akamaized.net,Global
@@ -6383,6 +6383,7 @@ HOST-SUFFIX,uploadstation.com,Global
 HOST-SUFFIX,upmedia.mg,Global
 HOST-SUFFIX,upornia.com,Global
 HOST-SUFFIX,uproxy.org,Global
+HOST-SUFFIX,upsangel.com,Global
 HOST-SUFFIX,uptodown.com,Global
 HOST-SUFFIX,upwill.org,Global
 HOST-SUFFIX,ur7s.com,Global
