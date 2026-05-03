@@ -1,5 +1,5 @@
 # 规则名称: GreatFireWall
-# 规则统计: 4205
+# 规则统计: 4206
 
 DOMAIN-SUFFIX,000webhost.com
 DOMAIN-SUFFIX,0rz.tw
@@ -3170,6 +3170,7 @@ DOMAIN-SUFFIX,socks-proxy.net
 DOMAIN-SUFFIX,sockslist.net
 DOMAIN-SUFFIX,socrec.org
 DOMAIN-SUFFIX,softether-download.com
+DOMAIN-SUFFIX,softether.co.jp
 DOMAIN-SUFFIX,softether.org
 DOMAIN-SUFFIX,softfamous.com
 DOMAIN-SUFFIX,softwarebychuck.com
