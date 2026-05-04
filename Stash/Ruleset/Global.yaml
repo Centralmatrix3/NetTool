@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 7311
+# 规则统计: 7307
 
 payload:
   - DOMAIN,cloud.oracle.com
@@ -5213,9 +5213,6 @@ payload:
   - DOMAIN-SUFFIX,sbme.me
   - DOMAIN-SUFFIX,sbs.com.au
   - DOMAIN-SUFFIX,sbti.unun.dev
-  - DOMAIN-SUFFIX,scache.vzw.com
-  - DOMAIN-SUFFIX,scache1.vzw.com
-  - DOMAIN-SUFFIX,scache2.vzw.com
   - DOMAIN-SUFFIX,scasino.com
   - DOMAIN-SUFFIX,schema.org
   - DOMAIN-SUFFIX,sciencemag.org
@@ -5560,7 +5557,6 @@ payload:
   - DOMAIN-SUFFIX,srocket.us
   - DOMAIN-SUFFIX,ss-link.com
   - DOMAIN-SUFFIX,ss.levyhsu.com
-  - DOMAIN-SUFFIX,ss7.vzw.com
   - DOMAIN-SUFFIX,ssglobal.co
   - DOMAIN-SUFFIX,ssglobal.me
   - DOMAIN-SUFFIX,ssh91.com

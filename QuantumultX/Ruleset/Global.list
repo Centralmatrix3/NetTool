@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 7311
+# 规则统计: 7307
 
 HOST,cloud.oracle.com,Global
 HOST,steambroadcast.akamaized.net,Global
@@ -5212,9 +5212,6 @@ HOST-SUFFIX,sb-cd.com,Global
 HOST-SUFFIX,sbme.me,Global
 HOST-SUFFIX,sbs.com.au,Global
 HOST-SUFFIX,sbti.unun.dev,Global
-HOST-SUFFIX,scache.vzw.com,Global
-HOST-SUFFIX,scache1.vzw.com,Global
-HOST-SUFFIX,scache2.vzw.com,Global
 HOST-SUFFIX,scasino.com,Global
 HOST-SUFFIX,schema.org,Global
 HOST-SUFFIX,sciencemag.org,Global
@@ -5559,7 +5556,6 @@ HOST-SUFFIX,squirrelvpn.com,Global
 HOST-SUFFIX,srocket.us,Global
 HOST-SUFFIX,ss-link.com,Global
 HOST-SUFFIX,ss.levyhsu.com,Global
-HOST-SUFFIX,ss7.vzw.com,Global
 HOST-SUFFIX,ssglobal.co,Global
 HOST-SUFFIX,ssglobal.me,Global
 HOST-SUFFIX,ssh91.com,Global
