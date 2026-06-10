@@ -91,7 +91,7 @@ def process_parse(line, enable_type=False, enable_param=False):
             rule_type = "DOMAIN-SUFFIX" if rule_type.startswith(".") else "DOMAIN"
     rule_type, rule_value, rule_param = rule_type.upper(), str(rule_value), rule_param.strip()
     if enable_param and rule_type in {"IP-CIDR", "IP-CIDR6"}:
-        param = [item.strip() for item in rule_param.split(",") if item.strip()]
+        param = [part.strip() for part in rule_param.split(",") if part.strip()]
         if "no-resolve" not in param:
             param.append("no-resolve")
         rule_param = ",".join(param)
