@@ -99,7 +99,7 @@ def process_parse(line, enable_type=False, enable_param=False):
 
 
 def process_order(rules, unknown_rule=False):
-    seen, result = set(), []
+    seen, ordered = set(), []
     def rule_sort(rule):
         return (RULE_TYPE_INDEX.get(rule.type, len(RULE_TYPE_ORDER)), rule.value)
     for rule in sorted(rules, key=rule_sort):
@@ -109,8 +109,8 @@ def process_order(rules, unknown_rule=False):
         if rule.type not in RULE_TYPE_INDEX and not unknown_rule:
             continue
         seen.add(rule_data)
-        result.append(rule)
-    return result
+        ordered.append(rule)
+    return ordered
 
 
 def process_read(file_path, enable_type=False, enable_order=False, enable_param=False, unknown_rule=False):
