@@ -1,0 +1,27 @@
+# 规则名称: 港台媒体
+# 规则统计: 16(16)
+
+# 规则名称: BiliBili
+# 规则统计: 11
+DOMAIN,api.biliapi.com
+DOMAIN,api.biliapi.net
+DOMAIN,api.bilibili.com
+DOMAIN,app.biliapi.com
+DOMAIN,app.biliapi.net
+DOMAIN,app.bilibili.com
+DOMAIN,grpc.biliapi.net
+DOMAIN,m.bilibili.com
+DOMAIN,upos-hz-mirrorakam.akamaized.net
+DOMAIN,www.bilibili.com
+DOMAIN-KEYWORD,cn-hk-eq-bcache-
+
+# 规则名称: IQiYi
+# 规则统计: 3
+DOMAIN,cache.video.iqiyi.com
+IP-CIDR,116.211.202.206/32,no-resolve
+IP-CIDR,116.211.202.216/32,no-resolve
+
+# 规则名称: MGTV
+# 规则统计: 2
+DOMAIN,mobileso.bz.mgtv.com
+DOMAIN-SUFFIX,api.mgtv.com

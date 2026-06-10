@@ -1,0 +1,14 @@
+# 规则名称: IntelDev
+# 规则统计: 11
+
+DOMAIN-SUFFIX,01.org
+DOMAIN-SUFFIX,acpica.com
+DOMAIN-SUFFIX,clearlinux.org
+DOMAIN-SUFFIX,hyperscan.io
+DOMAIN-SUFFIX,intellinuxgraphics.com
+DOMAIN-SUFFIX,intellinuxgraphics.net
+DOMAIN-SUFFIX,oneapi.com
+DOMAIN-SUFFIX,openvinotoolkit.org
+DOMAIN-SUFFIX,ospray.net
+DOMAIN-SUFFIX,ospray.org
+DOMAIN-SUFFIX,snap-telemetry.io

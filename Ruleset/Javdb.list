@@ -1,0 +1,6 @@
+# 规则名称: Javdb
+# 规则统计: 3
+
+DOMAIN-SUFFIX,javdb.com
+DOMAIN-SUFFIX,jdbimgs.com
+DOMAIN-SUFFIX,jdbstatic.com

@@ -1,0 +1,280 @@
+# 规则名称: 国内媒体
+# 规则统计: 200(200)
+
+# 规则名称: AcFun
+# 规则统计: 4
+DOMAIN-SUFFIX,acfun.cn
+DOMAIN-SUFFIX,acfun.com
+DOMAIN-SUFFIX,acfun.tv
+DOMAIN-SUFFIX,aixifan.com
+
+# 规则名称: BiliBili
+# 规则统计: 20
+DOMAIN,apiintl.biliapi.net
+DOMAIN,upos-hz-mirrorakam.akamaized.net
+DOMAIN-SUFFIX,acg.tv
+DOMAIN-SUFFIX,acgvideo.com
+DOMAIN-SUFFIX,b23.tv
+DOMAIN-SUFFIX,bigfun.cn
+DOMAIN-SUFFIX,bigfunapp.cn
+DOMAIN-SUFFIX,biliapi.com
+DOMAIN-SUFFIX,biliapi.net
+DOMAIN-SUFFIX,bilibili.co
+DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,bilibili.tv
+DOMAIN-SUFFIX,biligame.com
+DOMAIN-SUFFIX,biligame.net
+DOMAIN-SUFFIX,biliintl.co
+DOMAIN-SUFFIX,bilivideo.cn
+DOMAIN-SUFFIX,bilivideo.com
+DOMAIN-SUFFIX,hdslb.com
+DOMAIN-SUFFIX,im9.com
+DOMAIN-SUFFIX,smtcdns.net
+
+# 规则名称: CCTV
+# 规则统计: 6
+DOMAIN-SUFFIX,cctv.cn
+DOMAIN-SUFFIX,cctv.com
+DOMAIN-SUFFIX,cctvpic.com
+DOMAIN-SUFFIX,cntv.cn
+DOMAIN-SUFFIX,cntv.com
+DOMAIN-SUFFIX,livechina.com
+
+# 规则名称: DouYin
+# 规则统计: 6
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,douyincdn.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,douyinstatic.com
+DOMAIN-SUFFIX,douyinvod.com
+DOMAIN-SUFFIX,idouyinvod.com
+
+# 规则名称: DouYu
+# 规则统计: 8
+DOMAIN-SUFFIX,bytefcdnrd.com
+DOMAIN-SUFFIX,douyu.com
+DOMAIN-SUFFIX,douyu.tv
+DOMAIN-SUFFIX,douyucdn.cn
+DOMAIN-SUFFIX,douyucdn2.cn
+DOMAIN-SUFFIX,douyuscdn.com
+DOMAIN-SUFFIX,douyutv.com
+DOMAIN-SUFFIX,edgesrv.com
+
+# 规则名称: HuYa
+# 规则统计: 5
+DOMAIN-SUFFIX,huya.com
+DOMAIN-SUFFIX,huyagame.cn
+DOMAIN-SUFFIX,msstatic.com
+DOMAIN-SUFFIX,peiwanlu.com
+DOMAIN-SUFFIX,snapplay.com
+
+# 规则名称: HuoShan
+# 规则统计: 3
+DOMAIN-SUFFIX,huoshan.com
+DOMAIN-SUFFIX,huoshanstatic.com
+DOMAIN-SUFFIX,huoshanzhibo.com
+
+# 规则名称: IQiYi
+# 规则统计: 23
+DOMAIN,intel-cache.m.iqiyi.com
+DOMAIN,intel-cache.video.iqiyi.com
+DOMAIN,intl-rcd.iqiyi.com
+DOMAIN,intl-subscription.iqiyi.com
+DOMAIN-SUFFIX,71.am
+DOMAIN-SUFFIX,71edge.com
+DOMAIN-SUFFIX,inter.iqiyi.com
+DOMAIN-SUFFIX,inter.ptqy.gitv.tv
+DOMAIN-SUFFIX,intl.iqiyi.com
+DOMAIN-SUFFIX,iq.com
+DOMAIN-SUFFIX,iqiyi.com
+DOMAIN-SUFFIX,iqiyipic.com
+DOMAIN-SUFFIX,ppsimg.com
+DOMAIN-SUFFIX,qiyi.com
+DOMAIN-SUFFIX,qiyipic.com
+DOMAIN-SUFFIX,qy.net
+DOMAIN-KEYWORD,qiyi
+IP-CIDR,103.44.56.0/22,no-resolve
+IP-CIDR,118.26.120.0/24,no-resolve
+IP-CIDR,118.26.32.0/23,no-resolve
+IP-CIDR,223.119.62.225/28,no-resolve
+IP-CIDR,23.40.241.251/32,no-resolve
+IP-CIDR,23.40.242.10/32,no-resolve
+
+# 规则名称: Ku6
+# 规则统计: 11
+DOMAIN-SUFFIX,feedsp.com
+DOMAIN-SUFFIX,juchang.cn
+DOMAIN-SUFFIX,juchang.com.cn
+DOMAIN-SUFFIX,ku6.cn
+DOMAIN-SUFFIX,ku6.com
+DOMAIN-SUFFIX,ku6.com.cn
+DOMAIN-SUFFIX,ku6.net
+DOMAIN-SUFFIX,ku6cdn.com
+DOMAIN-SUFFIX,ku6img.com
+DOMAIN-SUFFIX,ku6vms.com
+DOMAIN-SUFFIX,weiguan.com
+
+# 规则名称: KuGouMusic
+# 规则统计: 3
+DOMAIN-SUFFIX,kgimg.com
+DOMAIN-SUFFIX,kugoo.com
+DOMAIN-SUFFIX,kugou.com
+
+# 规则名称: KuWoMusic
+# 规则统计: 3
+DOMAIN-SUFFIX,koowo.cn
+DOMAIN-SUFFIX,koowo.com
+DOMAIN-SUFFIX,kuwo.cn
+
+# 规则名称: kuaiShou
+# 规则统计: 8
+DOMAIN-SUFFIX,gifshow.com
+DOMAIN-SUFFIX,inkwai.com
+DOMAIN-SUFFIX,ksapisrv.com
+DOMAIN-SUFFIX,kuaishou.com
+DOMAIN-SUFFIX,kuaishouzt.com
+DOMAIN-SUFFIX,kwaizt.com
+DOMAIN-SUFFIX,kwimgs.com
+DOMAIN-SUFFIX,yximgs.com
+
+# 规则名称: LeTV
+# 规则统计: 6
+DOMAIN-SUFFIX,le.com
+DOMAIN-SUFFIX,lecloud.com
+DOMAIN-SUFFIX,lemall.com
+DOMAIN-SUFFIX,letv.com
+DOMAIN-SUFFIX,letvcdn.com
+DOMAIN-SUFFIX,letvimg.com
+
+# 规则名称: MGTV
+# 规则统计: 3
+DOMAIN-SUFFIX,hitv.com
+DOMAIN-SUFFIX,hunantv.com
+DOMAIN-SUFFIX,mgtv.com
+
+# 规则名称: MiGu
+# 规则统计: 3
+DOMAIN-SUFFIX,cmvideo.cn
+DOMAIN-SUFFIX,migu.cn
+DOMAIN-SUFFIX,miguvideo.com
+
+# 规则名称: NetEaseMusic
+# 规则统计: 37
+DOMAIN-SUFFIX,163yun.com
+DOMAIN-SUFFIX,api.iplay.163.com
+DOMAIN-SUFFIX,hz.netease.com
+DOMAIN-SUFFIX,mam.netease.com
+DOMAIN-SUFFIX,music.163.com
+DOMAIN-SUFFIX,music.163.com.163jiasu.com
+IP-CIDR,101.71.154.241/32,no-resolve
+IP-CIDR,103.126.92.132/31,no-resolve
+IP-CIDR,103.126.92.132/32,no-resolve
+IP-CIDR,103.126.92.133/32,no-resolve
+IP-CIDR,112.13.119.17/32,no-resolve
+IP-CIDR,112.13.119.18/32,no-resolve
+IP-CIDR,112.13.122.1/32,no-resolve
+IP-CIDR,112.13.122.4/32,no-resolve
+IP-CIDR,115.236.118.33/32,no-resolve
+IP-CIDR,115.236.118.34/32,no-resolve
+IP-CIDR,115.236.121.1/32,no-resolve
+IP-CIDR,115.236.121.4/32,no-resolve
+IP-CIDR,118.24.63.156/32,no-resolve
+IP-CIDR,182.92.170.253/32,no-resolve
+IP-CIDR,193.112.159.225/32,no-resolve
+IP-CIDR,223.252.199.66/31,no-resolve
+IP-CIDR,223.252.199.66/32,no-resolve
+IP-CIDR,223.252.199.67/32,no-resolve
+IP-CIDR,39.105.175.128/32,no-resolve
+IP-CIDR,39.105.63.80/32,no-resolve
+IP-CIDR,45.254.48.1/32,no-resolve
+IP-CIDR,47.100.127.239/32,no-resolve
+IP-CIDR,59.111.160.195/32,no-resolve
+IP-CIDR,59.111.160.197/32,no-resolve
+IP-CIDR,59.111.179.214/32,no-resolve
+IP-CIDR,59.111.181.35/32,no-resolve
+IP-CIDR,59.111.181.38/32,no-resolve
+IP-CIDR,59.111.181.60/32,no-resolve
+IP-CIDR,59.111.19.33/32,no-resolve
+IP-CIDR,59.111.21.14/31,no-resolve
+IP-CIDR,59.111.238.29/32,no-resolve
+
+# 规则名称: PPTV
+# 规则统计: 3
+DOMAIN-SUFFIX,pplive.cn
+DOMAIN-SUFFIX,pplive.com
+DOMAIN-SUFFIX,pptv.com
+
+# 规则名称: PPX
+# 规则统计: 2
+DOMAIN-SUFFIX,pipix.com
+DOMAIN-SUFFIX,ppxvod.com
+
+# 规则名称: QQMusic
+# 规则统计: 7
+DOMAIN,aqqmusic.tc.qq.com
+DOMAIN,moo.qq.com
+DOMAIN-SUFFIX,music.qq.com
+DOMAIN-SUFFIX,music.tc.qq.com
+DOMAIN-SUFFIX,qqmusic.qq.com
+DOMAIN-SUFFIX,tencentmusic.com
+DOMAIN-SUFFIX,y.qq.com
+
+# 规则名称: SohuVideo
+# 规则统计: 3
+DOMAIN-SUFFIX,itc.cn
+DOMAIN-SUFFIX,sohu.com
+DOMAIN-SUFFIX,sohucs.com
+
+# 规则名称: TaiHeMusic
+# 规则统计: 8
+DOMAIN-SUFFIX,91q.com
+DOMAIN-SUFFIX,dmhmusic.com
+DOMAIN-SUFFIX,qianqian.com
+DOMAIN-SUFFIX,submusic.cn
+DOMAIN-SUFFIX,taihe.com
+DOMAIN-SUFFIX,ttplayer.com
+DOMAIN-SUFFIX,youyou.com
+DOMAIN-SUFFIX,youyou001.com
+
+# 规则名称: TencentVideo
+# 规则统计: 3
+DOMAIN-SUFFIX,v.qq.com
+DOMAIN-SUFFIX,v.smtcdns.com
+DOMAIN-SUFFIX,video.qq.com
+
+# 规则名称: XiGuaVideo
+# 规则统计: 4
+DOMAIN-SUFFIX,bdxiguaimg.com
+DOMAIN-SUFFIX,bdxiguastatic.com
+DOMAIN-SUFFIX,bdxiguavod.com
+DOMAIN-SUFFIX,ixgvideo.com
+DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,ixiguavideo.com
+DOMAIN-SUFFIX,xiguaapp.cn
+DOMAIN-SUFFIX,xiguaapp.com
+DOMAIN-SUFFIX,xiguashipin.cn
+DOMAIN-SUFFIX,xiguashipin.net
+DOMAIN-SUFFIX,xiguavideo.cn
+DOMAIN-SUFFIX,xiguavideo.net
+IP-CIDR,114.246.10.65/32,no-resolve
+
+# 规则名称: XiaMiMusic
+# 规则统计: 3
+DOMAIN-SUFFIX,xiami.com
+DOMAIN-SUFFIX,xiami.fm
+DOMAIN-SUFFIX,xiami.net
+
+# 规则名称: Ximalaya
+# 规则统计: 2
+DOMAIN-SUFFIX,ximalaya.com
+DOMAIN-SUFFIX,xmcdn.com
+
+# 规则名称: Youku
+# 规则统计: 7
+DOMAIN-SUFFIX,cibntv.net
+DOMAIN-SUFFIX,kumiao.com
+DOMAIN-SUFFIX,mmstat.com
+DOMAIN-SUFFIX,soku.com
+DOMAIN-SUFFIX,ykimg.com
+DOMAIN-SUFFIX,youku.com
+IP-CIDR,106.11.0.0/16,no-resolve

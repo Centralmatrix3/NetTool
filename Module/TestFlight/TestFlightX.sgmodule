@@ -1,0 +1,12 @@
+#!name = TestFlight
+#!desc = TestFlight强制安装
+#!author = Skyxim
+
+[General]
+skip-proxy = %APPEND% iosapps.itunes.apple.com
+
+[Script]
+TF强制安装 = type=http-response,pattern=^https:\/\/testflight\.apple\.com((\/v3\/accounts\/.+?\/apps$)|(\/v2\/accounts\/.+?\/apps\/.+?\/builds\/.+)),script-path=https://raw.githubusercontent.com/Centralmatrix3/Network/master/Scripts/TestFlight/TestFlightX.js,requires-body=1,timeout=120
+
+[MITM]
+hostname = %APPEND% testflight.apple.com

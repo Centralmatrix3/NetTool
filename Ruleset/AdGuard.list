@@ -1,0 +1,16 @@
+# 规则名称: AdGuard
+# 规则统计: 13
+
+DOMAIN-SUFFIX,adguard-dns.com
+DOMAIN-SUFFIX,adguard-dns.io
+DOMAIN-SUFFIX,adguard-vpn.com
+DOMAIN-SUFFIX,adguard-vpn.online
+DOMAIN-SUFFIX,adguard.app
+DOMAIN-SUFFIX,adguard.com
+DOMAIN-SUFFIX,adguard.info
+DOMAIN-SUFFIX,adguard.io
+DOMAIN-SUFFIX,adguard.org
+DOMAIN-SUFFIX,adguardvpn.com
+DOMAIN-SUFFIX,adtidy.net
+DOMAIN-SUFFIX,adtidy.org
+DOMAIN-SUFFIX,agrd.io

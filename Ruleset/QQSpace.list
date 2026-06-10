@@ -1,0 +1,6 @@
+# 规则名称: QQSpace
+# 规则统计: 3
+
+DOMAIN-SUFFIX,qzone.com
+DOMAIN-SUFFIX,qzoneapp.com
+DOMAIN-SUFFIX,urlshare.cn
