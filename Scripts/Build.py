@@ -82,7 +82,7 @@ def process_parse(line, enable_type=False, enable_param=False):
     rule_type, rule_value, rule_param = (line.split(",", 2) + ["", ""])[:3]
     if enable_type and rule_type.upper() not in RULE_TYPE_KNOWN:
         if rule_value and not rule_param:
-            rule_param, rule_value = rule_value, ""
+            rule_param = rule_value
         try:
             rule_value = ipaddress.ip_network(rule_type, strict=False)
             rule_type = "IP-CIDR6" if rule_value.version == 6 else "IP-CIDR"
