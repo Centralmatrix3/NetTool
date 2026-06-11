@@ -10,9 +10,7 @@ import dataclasses
 from pathlib import Path
 from collections import defaultdict
 
-
 COMMENT_PATTERN = re.compile(r"(?<!:)//.*$")
-
 
 RULE_TYPE_ORDER = [
     "DOMAIN",
@@ -28,7 +26,6 @@ RULE_TYPE_EXTRA = {"USER-AGENT", "URL-REGEX", "PROTOCOL", "PROCESS-NAME"}
 RULE_TYPE_INDEX = {rule: index for index, rule in enumerate(RULE_TYPE_ORDER)}
 RULE_TYPE_KNOWN = frozenset(RULE_TYPE_ORDER) | RULE_TYPE_EXTRA
 
-
 EGERN_RULE_MAP = {
     "DOMAIN": "domain_set",
     "DOMAIN-SUFFIX": "domain_suffix_set",
@@ -41,7 +38,6 @@ EGERN_RULE_MAP = {
 }
 EGERN_RULE_QUOTE = {"domain_wildcard_set"}
 
-
 QUANTUMULTX_RULE_MAP = {
     "DOMAIN": "HOST",
     "DOMAIN-SUFFIX": "HOST-SUFFIX",
@@ -53,7 +49,6 @@ QUANTUMULTX_RULE_MAP = {
     "GEOIP": "GEOIP"
 }
 
-
 SINGBOX_RULE_MAP = {
     "DOMAIN": "domain",
     "DOMAIN-SUFFIX": "domain_suffix",
@@ -61,7 +56,6 @@ SINGBOX_RULE_MAP = {
     "IP-CIDR": "ip_cidr",
     "IP-CIDR6": "ip_cidr"
 }
-
 
 STASH_DOMAIN_FILE = {"AdBlock", "Advertising", "DIRECT", "GreatFireWall", "PROXY", "REJECT"}
 STASH_IPCIDR_FILE = {"CNCIDR", "CNCIDR4", "CNCIDR6"}
