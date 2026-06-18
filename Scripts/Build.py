@@ -91,7 +91,6 @@ def process_parse(line, enable_type=False, enable_param=False):
         rule_param = ",".join(param)
     return Rule(rule_type, rule_value, rule_param)
 
-
 def process_order(rules, unknown_rule=False):
     seen, ordered = set(), []
     def rule_sort(rule):
@@ -106,7 +105,6 @@ def process_order(rules, unknown_rule=False):
         ordered.append(rule)
     return ordered
 
-
 def process_read(file_path, enable_type=False, enable_order=False, enable_param=False, unknown_rule=False):
     rules = []
     for line in file_path.read_text(encoding="utf-8").splitlines():
@@ -116,7 +114,6 @@ def process_read(file_path, enable_type=False, enable_order=False, enable_param=
     if enable_order:
         rules = process_order(rules, unknown_rule=unknown_rule)
     return RuleSet(file_path.stem, rules)
-
 
 def process_write(file_path, rule_name, rule_data, platform):
     def rule_total():
@@ -133,7 +130,6 @@ def process_write(file_path, rule_name, rule_data, platform):
             file.write(f"# 规则统计: {rule_total()}\n\n")
             file.writelines(f"{line}\n" for line in rule_data)
     print(f"Processed ({platform}): {file_path}")
-
 
 def convert_rules(ruleset, platform):
     rule_list, rule_name = ruleset.rules, ruleset.name
@@ -186,7 +182,6 @@ def convert_rules(ruleset, platform):
         return output
     sys.exit(f"Unknown Platform: {platform}")
 
-
 def capture_file(file_path, platform):
     if not file_path.exists():
         sys.exit(f"{file_path} Not Found.")
@@ -204,7 +199,6 @@ def capture_file(file_path, platform):
         sys.exit(f"No File Found in: {file_path}")
     return file_list
 
-
 def process_file(file_list, args):
     for file_path in file_list:
         try:
@@ -216,7 +210,6 @@ def process_file(file_list, args):
         except Exception as error:
             print(f"Failed to process {file_path}: {error}")
     print("Processed Completed.")
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
@@ -234,7 +227,6 @@ def parse_arguments():
     convert.add_argument("--order", action=argparse.BooleanOptionalAction)
     convert.add_argument("--unknown-rule", action=argparse.BooleanOptionalAction)
     return parser.parse_args()
-
 """
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
@@ -245,7 +237,6 @@ def parse_arguments():
     parser.add_argument("--order", action=argparse.BooleanOptionalAction)
     parser.add_argument("--unknown-rule", action=argparse.BooleanOptionalAction)
     return parser.parse_args()
-
 
 def main():
     args = parse_arguments()
@@ -260,11 +251,9 @@ def main():
     print(f"Processed {len(file)} file(s) in: {args.file_path}")
     process_file(file, args)
 
-
 if __name__ == "__main__":
     main()
 """
-
 def rulelib_mode(args):
     print("============== Build.py ==============")
     print(f"使用下载规则: {'已启用' if args.download else '未启用'}")
@@ -272,7 +261,6 @@ def rulelib_mode(args):
     print("======================================")
     mode = "download" if args.download else "copy"
     rulelib.process_repo(mode, args.repo)
-
 
 def convert_mode(args):
     print("============== Build.py ==============")
@@ -286,14 +274,12 @@ def convert_mode(args):
     print(f"Processed {len(file)} file(s) in: {args.file_path}")
     process_file(file, args)
 
-
 def main():
     args = parse_arguments()
     if args.mode == "R":
         rulelib_mode(args)
     elif args.mode == "C":
         convert_mode(args)
-
 
 if __name__ == "__main__":
     main()
