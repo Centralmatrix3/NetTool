@@ -97,12 +97,12 @@ def process_order(rules, unknown_rule=False):
     def rule_sort(rule):
         return (RULE_TYPE_INDEX.get(rule.type, len(RULE_TYPE_ORDER)), rule.value)
     for rule in sorted(rules, key=rule_sort):
-        rule_data = (rule.type.lower(), rule.value.lower())
-        if rule_data in seen:
+        rule_key = (rule.type.lower(), rule.value.lower())
+        if rule_key in seen:
             continue
         if rule.type not in RULE_TYPE_INDEX and not unknown_rule:
             continue
-        seen.add(rule_data)
+        seen.add(rule_key)
         ordered.append(rule)
     return ordered
 
