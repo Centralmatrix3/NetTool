@@ -1,5 +1,5 @@
 # 规则名称: AdBlockLite
-# 规则统计: 7619
+# 规则统计: 7618
 
 DOMAIN,118.89.204.198
 DOMAIN,a.wkanx.com
@@ -3112,7 +3112,6 @@ DOMAIN-SUFFIX,googleadsserving.cn
 DOMAIN-SUFFIX,googlecommerce.com
 DOMAIN-SUFFIX,googlehm.cc
 DOMAIN-SUFFIX,googlesyndication.com
-DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,goose64.top
 DOMAIN-SUFFIX,gorgon.youdao.com
