@@ -4,7 +4,7 @@
  * @author = Skyxim
 */
 
-const url = $request.url
+ const url = $request.url
  const responseBody = $response.body
  
      ; (async () => {
