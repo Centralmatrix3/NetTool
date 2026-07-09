@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: "Asia/Shanghai"
-      PYTHONPATH: "Network/Scripts"
+      PYTHONPATH: "Scripts"
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7.0.0
