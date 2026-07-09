@@ -10,30 +10,28 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: "Asia/Shanghai"
+      PYTHONPATH: "Network/Scripts"
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7.0.0
 
-      - name: Process Ruleset
-        run: |
-          python Scripts/Build.py R --copy
-          for dir in Ruleset; do
-            [ ! -d "$dir" ] && echo "$dir Not Found." && continue
-            python Scripts/Build.py C Surge "$dir" --type --order
-          done
-          for dir in QuantumultX/Ruleset; do
-            [ ! -d "$dir" ] && echo "$dir Not Found." && continue
-            python Scripts/Build.py C QuantumultX "$dir" --order
-          done
-          for dir in Stash/Ruleset; do
-            [ ! -d "$dir" ] && echo "$dir Not Found." && continue
-            python Scripts/Build.py C Stash "$dir" --order
-          done
-          for dir in Surge/Ruleset; do
-            [ ! -d "$dir" ] && echo "$dir Not Found." && continue
-            python Scripts/Build.py C Surge "$dir" --order
-          done
-          find . -type d -name "__pycache__" -exec rm -rf {} +
+      - name: Source
+        run: python -m Build R --copy
+
+      - name: Ruleset
+        run: python -m Build C Surge Ruleset --type --order
+
+      - name: QuantumultX
+        run: python -m Build C Surge QuantumultX/Ruleset --type --order
+
+      - name: Stash
+        run: python -m Build C Surge Stash/Ruleset --type --order
+
+      - name: Surge
+        run: python -m Build C Surge Surge/Ruleset --type --order
+
+      - name: Pycache
+        run: find . -type d -name "__pycache__" -exec rm -rf {} +
 
       - name: Push Change
         run: |
