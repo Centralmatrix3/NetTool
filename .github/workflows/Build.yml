@@ -22,10 +22,10 @@ jobs:
         run: python -m Build C Surge Ruleset --type --order
 
       - name: QuantumultX
-        run: python -m Build C Surge QuantumultX/Ruleset --type --order
+        run: python -m Build C QuantumultX QuantumultX/Ruleset --type --order
 
       - name: Stash
-        run: python -m Build C Surge Stash/Ruleset --type --order
+        run: python -m Build C Stash Stash/Ruleset --type --order
 
       - name: Surge
         run: python -m Build C Surge Surge/Ruleset --type --order
