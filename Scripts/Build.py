@@ -2,8 +2,8 @@
 
 import argparse
 from pathlib import Path
-from Library import convert
 from Library import ruleset
+from Library import convert
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
