@@ -1,5 +1,5 @@
 # 规则名称: Tld-Not-CN
-# 规则统计: 831
+# 规则统计: 829
 
 DOMAIN-SUFFIX,aaa
 DOMAIN-SUFFIX,aarp
@@ -269,7 +269,6 @@ DOMAIN-SUFFIX,gmx
 DOMAIN-SUFFIX,gn
 DOMAIN-SUFFIX,godaddy
 DOMAIN-SUFFIX,goldpoint
-DOMAIN-SUFFIX,goo
 DOMAIN-SUFFIX,goodyear
 DOMAIN-SUFFIX,goog
 DOMAIN-SUFFIX,google
@@ -770,7 +769,6 @@ DOMAIN-SUFFIX,xn--mgb2ddes
 DOMAIN-SUFFIX,xn--mgb9awbf
 DOMAIN-SUFFIX,xn--mgba3a3ejt
 DOMAIN-SUFFIX,xn--mgba3a4f16a
-DOMAIN-SUFFIX,xn--mgba3a4fra
 DOMAIN-SUFFIX,xn--mgba7c0bbn0a
 DOMAIN-SUFFIX,xn--mgbaam7a8h
 DOMAIN-SUFFIX,xn--mgbah1a3hjkrd
