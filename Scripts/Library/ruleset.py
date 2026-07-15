@@ -24,7 +24,7 @@ def write_rule(target_file, source_file):
             source_rule_content.append(read_rule(source))
             print(f"Processed: {source} -> {target_file}")
         except Exception as error:
-            sys.exit(f"Process Failed: {source} ({error})")
+            raise RuntimeError(f"Process Failed: {source} ({error})") from error
     target_path = Path(target_file)
     target_path.parent.mkdir(parents=True, exist_ok=True)
     with target_path.open("w", encoding="utf-8", newline="\n") as output:
@@ -39,7 +39,7 @@ def resolve_repo(repo_arg):
         return repo_arg
     if env_repo := os.environ.get("GITHUB_REPOSITORY", "").strip():
         return env_repo.rsplit("/", 1)[-1]
-    sys.exit("Error: No Repository Specified")
+    raise ValueError("No Repository Specified")
 
 def process_rule(source_path, repository):
     print(f"Execute in {repository} Repository")
@@ -240,7 +240,7 @@ def process_rule(source_path, repository):
             "Surge": {"extension": "list", "exclude": set()}
         }
     else:
-        sys.exit(f"Unknown Repository: {repository}")
+        raise ValueError(f"Unknown Repository: {repository}")
     for target_file, source_file in rule_source_link.items():
         write_rule(target_file, source_file)
     for target_rule, source_rule in rule_source_file.items():
@@ -255,7 +255,7 @@ def process_rule(source_path, repository):
 
 def process_repo(mode, repo=None):
     if mode not in {"download", "copy"}:
-        sys.exit(f"Unknown Mode: {mode}")
+        raise ValueError(f"Unknown Mode: {mode}")
     repository = resolve_repo(repo)
     if mode == "download":
         source_path = RULESET_BASE_URL
@@ -267,19 +267,22 @@ def process_repo(mode, repo=None):
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
-    parser.add_argument("repo", nargs="?", help="Repository Name")
+    parser.add_argument("repo", nargs="?")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--download", dest="mode", action="store_const", const="download")
     group.add_argument("--copy", dest="mode", action="store_const", const="copy")
     return parser.parse_args()
 
 def main():
-    args = parse_arguments()
-    print("============== Build.py ==============")
-    print(f"使用下载规则: {'已启用' if args.mode == 'download' else '未启用'}")
-    print(f"使用复制规则: {'已启用' if args.mode == 'copy' else '未启用'}")
-    print("======================================")
-    process_repo(args.mode, args.repo)
+    try:
+        args = parse_arguments()
+        print("============== Build.py ==============")
+        print(f"使用下载规则: {'已启用' if args.mode == 'download' else '未启用'}")
+        print(f"使用复制规则: {'已启用' if args.mode == 'copy' else '未启用'}")
+        print("======================================")
+        process_repo(args.mode, args.repo)
+    except Exception as error:
+        sys.exit(error)
 
 if __name__ == "__main__":
     main()
