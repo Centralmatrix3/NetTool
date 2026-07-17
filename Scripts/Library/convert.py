@@ -184,44 +184,50 @@ def process_rule(ruleset, platform):
             rule_data = f"{rule.type},{rule.value}" + (f",{rule.param}" if rule.param else "")
             output.append(rule_data)
         return output
-    sys.exit(f"Unknown Platform: {platform}")
+    raise ValueError(f"Unknown Platform: {platform}")
 
 def collect_file(file_path, platform):
-    if not file_path.exists():
-        sys.exit(f"{file_path} Not Found.")
-    if file_path.is_file():
-        if platform == "Singbox" and file_path.suffix.lower() != ".json":
-            sys.exit(f"Singbox only supports JSON File: {file_path.suffix}")
-        return [file_path]
-    if not file_path.is_dir():
-        sys.exit(f"{file_path} Unknown Type.")
-    file_list = sorted(
-        path for path in file_path.iterdir()
-        if path.is_file() and (platform != "Singbox" or path.suffix.lower() == ".json"))
+    file_list = []
+    for path in file_path:
+        if not path.exists():
+            raise FileNotFoundError(f"{path} Not Found.")
+        if not path.is_file() and not path.is_dir():
+            raise ValueError(f"{path} Unknown Type.")
+        file_source = [path] if path.is_file() else path.iterdir()
+        for file in file_source:
+            if not file.is_file():
+                continue
+            if platform == "Singbox" and file.suffix.lower() != ".json":
+                continue
+            file_list.append(file)
+    file_list = sorted(file_list)
     if not file_list:
-        sys.exit(f"No File Found in: {file_path}")
+        raise ValueError("No Supported File Found.")
     return file_list
 
-def process_file(file_list, args):
+def process_file(file_path, args):
+    file_list = collect_file(file_path, args.platform)
     process_failed_file = []
-    for file_path in file_list:
+    print(f"Platform: {args.platform}")
+    print(f"Processed {len(file_list)} file(s) from {len(file_path)} path(s)")
+    for file in file_list:
         try:
-            rule_read = process_read(
-                file_path, enable_type=args.type, enable_order=args.order,
+            rule_read = process_read(file,
+                enable_type=args.type, enable_order=args.order,
                 enable_param=args.param, unknown_rule=args.unknown_rule)
             rule_data = process_rule(rule_read, args.platform)
-            process_write(file_path, rule_read.name, rule_data, args.platform)
+            process_write(file, rule_read.name, rule_data, args.platform)
         except Exception as error:
-            process_failed_file.append(file_path)
-            print(f"Failed to process {file_path}: {error}")
+            process_failed_file.append(file)
+            print(f"Failed to process {file}: {error}")
     if process_failed_file:
-        sys.exit(f"Processed Failed: {len(process_failed_file)} file(s).")
+        raise RuntimeError(f"Processed Failed: {len(process_failed_file)} file(s).")
     print("Processed Completed.")
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
     parser.add_argument("platform", choices=["Egern", "QuantumultX", "Singbox", "Stash", "Surge"])
-    parser.add_argument("file_path", type=Path)
+    parser.add_argument("file_path", type=Path, nargs="+")
     parser.add_argument("--type", action=argparse.BooleanOptionalAction)
     parser.add_argument("--param", action=argparse.BooleanOptionalAction)
     parser.add_argument("--order", action=argparse.BooleanOptionalAction)
@@ -229,17 +235,17 @@ def parse_arguments():
     return parser.parse_args()
 
 def main():
-    args = parse_arguments()
-    print("============== Build.py ==============")
-    print(f"添加规则类型: {'已启用' if args.type else '未启用'}")
-    print(f"添加规则参数: {'已启用' if args.param else '未启用'}")
-    print(f"排序规则去重: {'已启用' if args.order else '未启用'}")
-    print(f"未知规则保留: {'已启用' if args.unknown_rule else '未启用'}")
-    print("======================================")
-    file_list = collect_file(args.file_path, args.platform)
-    print(f"Platform: {args.platform}")
-    print(f"Processed {len(file_list)} file(s) in: {args.file_path}")
-    process_file(file_list, args)
+    try:
+        args = parse_arguments()
+        print("============== Build.py ==============")
+        print(f"添加规则类型: {'已启用' if args.type else '未启用'}")
+        print(f"添加规则参数: {'已启用' if args.param else '未启用'}")
+        print(f"排序规则去重: {'已启用' if args.order else '未启用'}")
+        print(f"未知规则保留: {'已启用' if args.unknown_rule else '未启用'}")
+        print("======================================")
+        process_file(args.file_path, args)
+    except Exception as error:
+        sys.exit(error)
 
 if __name__ == "__main__":
     main()
