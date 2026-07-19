@@ -1,6 +1,6 @@
-#!name = ScriptHub
-#!desc = https://script.hub
-#!author = 小白脸、xream、keywos、ckyb
+#!name=ScriptHub
+#!desc=https://script.hub
+#!author=小白脸,xream,keywos,ckyb
 
 [Script]
 ScriptHub = type=http-request,pattern=^https?:\/\/script\.hub\/($|edit\/|reload),script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-hub.js,timeout=120

@@ -1,6 +1,6 @@
-#!name = Sub-Store
-#!desc = https://sub.store
-#!author = Peng-YM
+#!name=Sub-Store
+#!desc=https://sub.store
+#!author=Peng-YM
 
 [Script]
 Sub-Store = type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),script-path=https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-1.min.js,requires-body=1,timeout=120
