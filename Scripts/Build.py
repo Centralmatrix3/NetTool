@@ -18,7 +18,7 @@ def parse_arguments():
     # import convert 
     convert_parser = subparsers.add_parser("C")
     convert_parser.add_argument("platform", choices=["Egern", "QuantumultX", "Singbox", "Stash", "Surge"])
-    convert_parser.add_argument("file_path", type=Path)
+    convert_parser.add_argument("file_path", type=Path, nargs="+")
     convert_parser.add_argument("--type", action=argparse.BooleanOptionalAction)
     convert_parser.add_argument("--param", action=argparse.BooleanOptionalAction)
     convert_parser.add_argument("--order", action=argparse.BooleanOptionalAction)
@@ -40,10 +40,7 @@ def convert_mode(args):
     print(f"排序规则去重: {'已启用' if args.order else '未启用'}")
     print(f"未知规则保留: {'已启用' if args.unknown_rule else '未启用'}")
     print("======================================")
-    file_list = convert.collect_file(args.file_path, args.platform)
-    print(f"Platform: {args.platform}")
-    print(f"Processed {len(file_list)} file(s) in: {args.file_path}")
-    convert.process_file(file_list, args)
+    convert.process_file(args.file_path, args)
 
 def main():
     args = parse_arguments()
