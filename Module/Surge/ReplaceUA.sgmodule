@@ -1,0 +1,13 @@
+#!name=ReplaceUA
+#!desc=ReplaceUA
+#!author=Matrix
+
+[Header Rewrite]
+http-request ^https:\/\/([^.]+\.)*(kelee\.one|ddgksf2013\.top)(\/.*)? header-replace User-Agent "Surge iOS/3800"
+
+http-response ^https:\/\/([^.]+\.)*(kelee\.one|ddgksf2013\.top)(\/.*)? header-add content-disposition inline
+
+http-response ^https:\/\/([^.]+\.)*(kelee\.one|ddgksf2013\.top)(\/.*)? header-replace content-type "text/plain; charset=utf-8"
+
+[MITM]
+hostname = %APPEND% kelee.one, *.kelee.one, ddgksf2013.top

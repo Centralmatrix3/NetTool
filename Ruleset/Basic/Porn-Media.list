@@ -1,0 +1,23 @@
+# 规则名称: 色情媒体
+# 规则统计: 12(12)
+
+# 规则名称: CosplayTele
+# 规则统计: 2
+DOMAIN-SUFFIX,cosplaytele.com
+DOMAIN-SUFFIX,cossora.stream
+
+# 规则名称: Hanime1
+# 规则统计: 3
+DOMAIN-SUFFIX,hanime.tv
+DOMAIN-SUFFIX,hanime1.me
+DOMAIN-SUFFIX,hembed.com
+
+# 规则名称: PornHub
+# 规则统计: 7
+DOMAIN-SUFFIX,phncdn.com
+DOMAIN-SUFFIX,phprcdn.com
+DOMAIN-SUFFIX,porngub.com
+DOMAIN-SUFFIX,pornhub-deutsch.net
+DOMAIN-SUFFIX,pornhub.com
+DOMAIN-SUFFIX,pornhubapparel.com
+DOMAIN-SUFFIX,pornhubpremium.com

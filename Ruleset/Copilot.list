@@ -1,0 +1,6 @@
+# 规则名称: Copilot
+# 规则统计: 3
+
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,githubcopilot.com

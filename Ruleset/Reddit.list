@@ -1,0 +1,7 @@
+# 规则名称: Reddit
+# 规则统计: 4
+
+DOMAIN-SUFFIX,redd.it
+DOMAIN-SUFFIX,reddit.com
+DOMAIN-SUFFIX,redditmedia.com
+DOMAIN-SUFFIX,redditstatic.com

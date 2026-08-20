@@ -1,0 +1,7 @@
+# 规则名称: SohuVideo
+# 规则统计: 4
+
+DOMAIN-SUFFIX,itc.cn
+DOMAIN-SUFFIX,sohu.com
+DOMAIN-SUFFIX,sohu.com.cn
+DOMAIN-SUFFIX,sohucs.com

@@ -1,0 +1,11 @@
+# 规则名称: VISA
+# 规则统计: 8
+
+DOMAIN-SUFFIX,dnsvisa.com
+DOMAIN-SUFFIX,visa.cn
+DOMAIN-SUFFIX,visa.com
+DOMAIN-SUFFIX,visa.com.cn
+DOMAIN-SUFFIX,visadigital.com
+DOMAIN-SUFFIX,visadns.com
+DOMAIN-SUFFIX,visanet.net
+DOMAIN-KEYWORD,visa

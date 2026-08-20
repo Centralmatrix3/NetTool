@@ -1,0 +1,8 @@
+# 规则名称: TouTiao
+# 规则统计: 5
+
+DOMAIN-SUFFIX,toutiaoapi.com
+DOMAIN-SUFFIX,toutiaoimg.com
+DOMAIN-SUFFIX,toutiaostatic.com
+DOMAIN-SUFFIX,toutiaovod.com
+DOMAIN-KEYWORD,toutiao

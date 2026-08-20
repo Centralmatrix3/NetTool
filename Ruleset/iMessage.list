@@ -1,0 +1,5 @@
+# 规则名称: iMessage
+# 规则统计: 2
+
+DOMAIN,identity.ess.apple.com
+DOMAIN,query.ess.apple.com
