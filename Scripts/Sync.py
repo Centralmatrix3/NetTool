@@ -65,7 +65,7 @@ def process_rule(source_path, repository):
             "Ruleset/BiliBili.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list"],
             "Ruleset/ByteDance.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/ByteDance.list"],
             "Ruleset/CNCIDR.list": ["https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/cn.txt"],
-            "Ruleset/China.list": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/China/China_All.list"],
+            "Ruleset/China.list": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list"],
             "Ruleset/ChinaASN.list": ["https://raw.githubusercontent.com/missuo/ASN-China/main/ASN.China.list"],
             "Ruleset/ChinaBGP.list": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaIPsBGP/ChinaIPsBGP.list"],
             "Ruleset/ChinaIP.list": ["https://raw.githubusercontent.com/missuo/ASN-China/main/IP.China.list"],
