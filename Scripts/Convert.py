@@ -290,8 +290,9 @@ def convert_rules(ruleset, target_platform):
         return output
     raise ValueError(f"Unknown Target Platform: {target_platform}")
 # ==================== #
-def collect_files(file_paths, source_platform):
+def collect_files(file_paths, source_platform, target_platform):
     file_list = []
+    platform = "Singbox" in {source_platform, target_platform}
     for path in file_paths:
         if not path.exists():
             raise FileNotFoundError(f"{path} Not Found.")
@@ -301,7 +302,7 @@ def collect_files(file_paths, source_platform):
         for file in file_source:
             if not file.is_file():
                 continue
-            if source_platform == "Singbox" and file.suffix.lower() != ".json":
+            if platform and file.suffix.lower() != ".json":
                 continue
             file_list.append(file)
     if not file_list:
@@ -309,7 +310,7 @@ def collect_files(file_paths, source_platform):
     return sorted(file_list)
 
 def process_files(file_paths, args):
-    files = collect_files(file_paths, args.source_platform)
+    files = collect_files(file_paths, args.source_platform, args.target_platform)
     failed_files = []
     print(f"Source Platform: {args.source_platform}")
     print(f"Target Platform: {args.target_platform}")
