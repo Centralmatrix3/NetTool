@@ -9,13 +9,11 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
     subparsers = parser.add_subparsers(dest="command", required=True)
     sync_parser = subparsers.add_parser("S")
-    # Sync Ruleset
     sync_parser.add_argument("repo", nargs="?")
     sync_source = sync_parser.add_mutually_exclusive_group(required=True)
     sync_source.add_argument("--download", dest="mode", action="store_const", const="download")
     sync_source.add_argument("--copy", dest="mode", action="store_const", const="copy")
     sync_parser.set_defaults(handler=sync_mode)
-    # Convert Rule
     convert_parser = subparsers.add_parser("C")
     platforms = ["Egern", "QuantumultX", "Singbox", "Stash", "Surge"]
     convert_parser.add_argument("source_platform", choices=platforms)
