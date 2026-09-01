@@ -21,10 +21,22 @@ jobs:
 
       - name: Convert Rule
         run: |
-          python -m Build C Surge Surge Ruleset --exclude --order
-          python -m Build C Surge QuantumultX Ruleset/QuantumultX --order
-          python -m Build C Surge Stash Ruleset/Stash --order
-          python -m Build C Surge Surge Ruleset/Surge --order
+          for dir in Ruleset; do
+            [ ! -d "$dir" ] && echo "$dir Not Found." && continue
+            python -m Build C Surge Surge "$dir" --exclude --order
+          done
+          for dir in Ruleset/QuantumultX; do
+            [ ! -d "$dir" ] && echo "$dir Not Found." && continue
+            python -m Build C Surge QuantumultX "$dir" --order
+          done
+          for dir in Ruleset/Stash; do
+            [ ! -d "$dir" ] && echo "$dir Not Found." && continue
+            python -m Build C Surge Stash "$dir" --order
+          done
+          for dir in Ruleset/Surge; do
+            [ ! -d "$dir" ] && echo "$dir Not Found." && continue
+            python -m Build C Surge Surge "$dir" --order
+          done
           find . -type d -name "__pycache__" -exec rm -rf {} +
 
       - name: Push Changes
