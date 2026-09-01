@@ -21,7 +21,7 @@ jobs:
 
       - name: Convert Rule
         run: |
-          python -m Build C Surge Surge Ruleset --exclude --param --order
+          python -m Build C Surge Surge Ruleset --exclude --order
           python -m Build C Surge QuantumultX Ruleset/QuantumultX --order
           python -m Build C Surge Stash Ruleset/Stash --order
           python -m Build C Surge Surge Ruleset/Surge --order
