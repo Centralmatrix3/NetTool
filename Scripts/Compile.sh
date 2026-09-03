@@ -27,4 +27,4 @@ for file in "$INPUT_PATH"/*.json; do
     filename="$(basename "${file%.json}")"
     sing-box rule-set compile "$file" -o "$OUTPUT_PATH/$filename.srs"
 done
-rm -rf "$SINGBOX_ARCHIVE" "$SINGBOX_DIR"
+rm -rf "$SINGBOX_ARCHIVE" "$SINGBOX_DIR" Network
