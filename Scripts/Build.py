@@ -6,7 +6,7 @@ import Sync
 import Convert
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description="Rule Build")
+    parser = argparse.ArgumentParser(description="Rule Build", fromfile_prefix_chars="@")
     subparsers = parser.add_subparsers(dest="command", required=True)
     sync_parser = subparsers.add_parser("S")
     sync_parser.add_argument("repo", nargs="?")
@@ -18,9 +18,10 @@ def parse_arguments():
     platforms = ["Egern", "QuantumultX", "Singbox", "Stash", "Surge"]
     convert_parser.add_argument("source_platform", choices=platforms)
     convert_parser.add_argument("target_platform", choices=platforms)
-    convert_parser.add_argument("file_paths", type=Path, nargs="+")
+    convert_parser.add_argument("file_path", type=Path, nargs="+")
     convert_parser.add_argument("--exclude", action=argparse.BooleanOptionalAction)
-    convert_parser.add_argument("--param", action=argparse.BooleanOptionalAction)
+    convert_parser.add_argument("--param", type=Path, nargs="*")
+    convert_parser.add_argument("--noparam", type=Path, nargs="*")
     convert_parser.add_argument("--order", action=argparse.BooleanOptionalAction)
     convert_parser.set_defaults(handler=convert_mode)
     return parser.parse_args()
@@ -37,10 +38,11 @@ def convert_mode(args):
     print(f"来源规则平台: {args.source_platform}")
     print(f"目标规则平台: {args.target_platform}")
     print(f"排除规则类型: {'已启用' if args.exclude else '未启用'}")
-    print(f"添加规则参数: {'已启用' if args.param else '未启用'}")
+    print(f"添加规则参数: {'已启用' if args.param is not None else '未启用'}")
+    print(f"移除规则参数: {'已启用' if args.noparam is not None else '未启用'}")
     print(f"排序规则内容: {'已启用' if args.order else '未启用'}")
     print("======================================")
-    Convert.process_files(args.file_paths, args)
+    Convert.process_files(args.file_path, args)
 
 def main():
     args = parse_arguments()

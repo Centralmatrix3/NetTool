@@ -9,38 +9,48 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 RULESET_SOURCE_URL = "https://raw.githubusercontent.com/Centralmatrix3/Network/master/Ruleset"
-# ==================== #
+# ============================== #
+# 读取规则内容
+# ============================== #
 @functools.cache
 def read_rule(source):
     if urlsplit(source).scheme in {"http", "https"}:
         with urllib.request.urlopen(source, timeout=30) as response:
             return response.read().decode("utf-8").rstrip()
     return Path(source).read_text(encoding="utf-8").rstrip()
-
+# ============================== #
+# 写入规则内容
+# ============================== #
 def write_rule(target_file, source_file):
-    source_rule_content = []
+    source_contents = []
     for source in source_file:
         try:
-            source_rule_content.append(read_rule(source))
+            source_contents.append(read_rule(source))
             print(f"Processed: {source} -> {target_file}")
         except Exception as error:
             raise RuntimeError(f"Process Failed: {source} ({error})") from error
     target_path = Path(target_file)
     target_path.parent.mkdir(parents=True, exist_ok=True)
     with target_path.open("w", encoding="utf-8", newline="\n") as output:
-        output.write("\n".join(source_rule_content) + "\n")
-# ==================== #
+        output.write("\n".join(source_contents) + "\n")
+# ============================== #
+# 解析规则路径
+# ============================== #
 def resolve_path(source_path, source_rule):
     source_path = source_path.rstrip("/")
     return [f"{source_path}/{file}" for file in source_rule]
-
+# ============================== #
+# 解析仓库名称
+# ============================== #
 def resolve_repo(repo_arg):
     if repo_arg := (repo_arg or "").strip():
         return repo_arg
     if env_repo := os.environ.get("GITHUB_REPOSITORY", "").strip():
         return env_repo.rsplit("/", 1)[-1]
     raise ValueError("No Repository Specified")
-# ==================== #
+# ============================== #
+# 构建仓库规则
+# ============================== #
 def process_rule(source_path, repository):
     print(f"Execute in {repository} Repository")
     if repository == "Network":
@@ -60,9 +70,11 @@ def process_rule(source_path, repository):
             "Ruleset/Amazon.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Amazon.list"],
             "Ruleset/AmazonIP.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AmazonIp.list"],
             "Ruleset/Apple.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Apple.list"],
+            "Ruleset/AppleTV.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AppleTV.list"],
             "Ruleset/BBC.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BBCiPlayer.list"],
             "Ruleset/Baidu.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Baidu.list"],
             "Ruleset/BiliBili.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list"],
+            "Ruleset/Binance.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Binance.list"],
             "Ruleset/ByteDance.list": ["https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/ByteDance.list"],
             "Ruleset/CNCIDR.list": ["https://raw.githubusercontent.com/Loyalsoldier/geoip/release/text/cn.txt"],
             "Ruleset/China.list": ["https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list"],
@@ -271,7 +283,9 @@ def process_rule(source_path, repository):
             target_file = f"Ruleset/{platform}/{target_rule}.{config['extension']}"
             write_rule(target_file, source_file)
     print(f"{repository} Repository: All Ruleset Processed!")
-# ==================== #
+# ============================== #
+# 处理仓库规则
+# ============================== #
 def process_repo(mode, repo=None):
     if mode not in {"download", "copy"}:
         raise ValueError(f"Unknown Mode: {mode}")
@@ -283,7 +297,9 @@ def process_repo(mode, repo=None):
     else:
         source_path = "Network/Ruleset"
     process_rule(source_path, repository)
-# ==================== #
+# ============================== #
+# 解析命令参数
+# ============================== #
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
     parser.add_argument("repo", nargs="?")
@@ -291,7 +307,9 @@ def parse_arguments():
     group.add_argument("--download", dest="mode", action="store_const", const="download")
     group.add_argument("--copy", dest="mode", action="store_const", const="copy")
     return parser.parse_args()
-# ==================== #
+# ============================== #
+# 程序入口
+# ============================== #
 def main():
     try:
         args = parse_arguments()
