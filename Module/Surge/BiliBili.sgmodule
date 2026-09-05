@@ -1,7 +1,7 @@
 #!name=哔哩哔哩
 #!desc=哔哩哔哩去广告
 #!author=kokoryh
-#!arguments=动态最常访问:auto,创作中心:0,优化评论加载:bilibili.request,空降助手:bilibili.airborne,置顶评论广告:1,日志等级:4
+#!arguments=动态最常访问:auto,创作中心:0,优化评论加载:bilibili.request,空降助手:bilibili.airborne,置顶评论广告:1,日志等级:4,屏蔽P2P:DEST-PORT
 
 [Rule]
 DOMAIN,api.biliapi.com,REJECT,extended-matching,pre-matching
@@ -9,6 +9,10 @@ DOMAIN,api.biliapi.net,REJECT,extended-matching,pre-matching
 DOMAIN,app.biliapi.com,REJECT,extended-matching,pre-matching
 DOMAIN,app.biliapi.net,REJECT,extended-matching,pre-matching
 AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker),(DOMAIN-KEYWORD,p2p)))),REJECT,pre-matching
+{{{屏蔽P2P}}},4480,REJECT-NO-DROP,pre-matching
+{{{屏蔽P2P}}},4483,REJECT-NO-DROP,pre-matching
+{{{屏蔽P2P}}},8082,REJECT-NO-DROP,pre-matching
+{{{屏蔽P2P}}},9102,REJECT-NO-DROP,pre-matching
 
 [Body Rewrite]
 http-response-jq ^https:\/\/api\.bilibili\.com\/pgc\/page\/channel\? '.data.modules |= map(select(.type != "TIP") | if .type == "BANNER" then .module_data.items |= map(select(.url | startswith("https://www.bilibili.com/blackboard/era/") | not)) else . end)'
