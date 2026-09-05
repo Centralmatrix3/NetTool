@@ -215,8 +215,8 @@ def process_rules(ruleset, args, param=None):
             rule.value = rule.type.lstrip(".")
             rule.type = "DOMAIN-SUFFIX" if rule.type.startswith(".") else "DOMAIN"
     if args.exclude:
-        excluded_types = {"USER-AGENT", "URL-REGEX", "PROTOCOL", "PROCESS-NAME"}
-        ruleset.rules = [rule for rule in ruleset.rules if rule.type not in excluded_types]
+        excluded_type = {"USER-AGENT", "URL-REGEX", "PROTOCOL", "PROCESS-NAME"}
+        ruleset.rules = [rule for rule in ruleset.rules if rule.type not in excluded_type]
     if param is not None:
         for rule in ruleset.rules:
             if rule.type in {"IP-CIDR", "IP-CIDR6"}:
