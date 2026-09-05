@@ -9,50 +9,37 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 RULESET_SOURCE_URL = "https://raw.githubusercontent.com/Centralmatrix3/Network/master/Ruleset"
-# ============================== #
-# 读取规则内容
-# ============================== #
+
+
 @functools.cache
-def read_rule(source):
+def read_content(source):
     if urlsplit(source).scheme in {"http", "https"}:
         with urllib.request.urlopen(source, timeout=30) as response:
             return response.read().decode("utf-8").rstrip()
     return Path(source).read_text(encoding="utf-8").rstrip()
-# ============================== #
-# 写入规则内容
-# ============================== #
-def write_rule(target_file, source_file):
-    source_contents = []
-    for source in source_file:
-        try:
-            source_contents.append(read_rule(source))
-            print(f"Processed: {source} -> {target_file}")
-        except Exception as error:
-            raise RuntimeError(f"Process Failed: {source} ({error})") from error
+
+
+def write_content(target_file, content):
     target_path = Path(target_file)
     target_path.parent.mkdir(parents=True, exist_ok=True)
-    with target_path.open("w", encoding="utf-8", newline="\n") as output:
-        output.write("\n".join(source_contents) + "\n")
-# ============================== #
-# 解析规则路径
-# ============================== #
+    with target_path.open("w", encoding="utf-8", newline="\n") as file:
+        file.write(content + "\n")
+
+
 def resolve_path(source_path, source_rule):
     source_path = source_path.rstrip("/")
     return [f"{source_path}/{file}" for file in source_rule]
-# ============================== #
-# 解析仓库名称
-# ============================== #
+
+
 def resolve_repo(repo_arg):
     if repo_arg := (repo_arg or "").strip():
         return repo_arg
     if env_repo := os.environ.get("GITHUB_REPOSITORY", "").strip():
         return env_repo.rsplit("/", 1)[-1]
     raise ValueError("No Repository Specified")
-# ============================== #
-# 构建仓库规则
-# ============================== #
-def process_rule(source_path, repository):
-    print(f"Execute in {repository} Repository")
+
+
+def resolve_rule(repository):
     if repository == "Network":
         rule_source_link = {
             "Ruleset/AI.list": [
@@ -141,12 +128,8 @@ def process_rule(source_path, repository):
             "Unbreak": ["Unbreak.list"],
             "WeChat": ["WeChat.list"]
         }
-        platform_config = {
-            "QuantumultX": {"extension": "list", "exclude": set()},
-            "Stash": {"extension": "yaml", "exclude": set()},
-            "Surge": {"extension": "list", "exclude": set()}
-        }
-    elif repository == "Matrix-io":
+        return rule_source_link, rule_source_file
+    if repository == "Matrix-io":
         rule_source_link = {}
         rule_source_file = {
             "5iTV": ["5iTV.list"],
@@ -260,6 +243,19 @@ def process_rule(source_path, repository):
             "Z-Library": ["Z-Library.list"],
             "iCloud": ["iCloud.list"],
         }
+        return rule_source_link, rule_source_file
+    raise ValueError(f"Unknown Repository: {repository}")
+
+
+def resolve_conf(repository):
+    if repository == "Network":
+        platform_config = {
+            "QuantumultX": {"extension": "list", "exclude": set()},
+            "Stash": {"extension": "yaml", "exclude": set()},
+            "Surge": {"extension": "list", "exclude": set()}
+        }
+        return platform_config
+    if repository == "Matrix-io":
         platform_config = {
             "Clash": {"extension": "yaml", "exclude": set()},
             "Egern": {"extension": "yaml", "exclude": set()},
@@ -270,10 +266,37 @@ def process_rule(source_path, repository):
             "Stash": {"extension": "yaml", "exclude": set()},
             "Surge": {"extension": "list", "exclude": set()}
         }
+        return platform_config
+    raise ValueError(f"Unknown Repository: {repository}")
+
+
+def process_rule(target_file, source_file):
+    source_contents = []
+    for source in source_file:
+        try:
+            source_contents.append(read_content(source))
+        except Exception as error:
+            raise RuntimeError(f"Process Failed: {source} ({error})") from error
+    write_content(target_file, "\n".join(source_contents))
+    for source in source_file:
+        print(f"Processed: {source} -> {target_file}")
+
+
+def process_repo(mode, repo=None):
+    if mode not in {"download", "copy"}:
+        raise ValueError(f"Unknown Mode: {mode}")
+    repository = resolve_repo(repo)
+    rule_source_link, rule_source_file = resolve_rule(repository)
+    platform_config = resolve_conf(repository)
+    if mode == "download":
+        source_path = RULESET_SOURCE_URL
+    elif repository == "Network":
+        source_path = "Ruleset"
     else:
-        raise ValueError(f"Unknown Repository: {repository}")
+        source_path = "Network/Ruleset"
+    print(f"Execute in {repository} Repository")
     for target_file, source_file in rule_source_link.items():
-        write_rule(target_file, source_file)
+        process_rule(target_file, source_file)
     for target_rule, source_rule in rule_source_file.items():
         source_file = resolve_path(source_path, source_rule)
         for platform, config in platform_config.items():
@@ -281,25 +304,10 @@ def process_rule(source_path, repository):
                 print(f"Exclude {target_rule} for {platform}")
                 continue
             target_file = f"Ruleset/{platform}/{target_rule}.{config['extension']}"
-            write_rule(target_file, source_file)
+            process_rule(target_file, source_file)
     print(f"{repository} Repository: All Ruleset Processed!")
-# ============================== #
-# 处理仓库规则
-# ============================== #
-def process_repo(mode, repo=None):
-    if mode not in {"download", "copy"}:
-        raise ValueError(f"Unknown Mode: {mode}")
-    repository = resolve_repo(repo)
-    if mode == "download":
-        source_path = RULESET_SOURCE_URL
-    elif repository == "Network":
-        source_path = "Ruleset"
-    else:
-        source_path = "Network/Ruleset"
-    process_rule(source_path, repository)
-# ============================== #
-# 解析命令参数
-# ============================== #
+
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
     parser.add_argument("repo", nargs="?")
@@ -307,9 +315,8 @@ def parse_arguments():
     group.add_argument("--download", dest="mode", action="store_const", const="download")
     group.add_argument("--copy", dest="mode", action="store_const", const="copy")
     return parser.parse_args()
-# ============================== #
-# 程序入口
-# ============================== #
+
+
 def main():
     try:
         args = parse_arguments()

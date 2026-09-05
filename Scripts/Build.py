@@ -26,12 +26,14 @@ def parse_arguments():
     convert_parser.set_defaults(handler=convert_mode)
     return parser.parse_args()
 
+
 def sync_mode(args):
     print("============== Build.py ==============")
     print(f"使用下载规则: {'已启用' if args.mode == 'download' else '未启用'}")
     print(f"使用复制规则: {'已启用' if args.mode == 'copy' else '未启用'}")
     print("======================================")
     Sync.process_repo(args.mode, args.repo)
+
 
 def convert_mode(args):
     print("============== Build.py ==============")
@@ -43,6 +45,7 @@ def convert_mode(args):
     print(f"排序规则内容: {'已启用' if args.order else '未启用'}")
     print("======================================")
     Convert.process_files(args.file_path, args)
+
 
 def main():
     args = parse_arguments()
