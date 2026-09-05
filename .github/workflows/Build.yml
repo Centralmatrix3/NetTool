@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v7.0.1
 
-      - name: Sync Ruleset
+      - name: Sources Sync
         run: |
           python -m Build S Network --copy
 
