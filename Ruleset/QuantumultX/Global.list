@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 7494
+# 规则统计: 7503
 
 HOST,cloud.oracle.com,Global
 HOST,steambroadcast.akamaized.net,Global
@@ -19,6 +19,8 @@ HOST-SUFFIX,10beasts.net,Global
 HOST-SUFFIX,10conditionsoflove.com,Global
 HOST-SUFFIX,10musume.com,Global
 HOST-SUFFIX,111666.best,Global
+HOST-SUFFIX,123av.com,Global
+HOST-SUFFIX,123av.me,Global
 HOST-SUFFIX,123rf.com,Global
 HOST-SUFFIX,12bet.com,Global
 HOST-SUFFIX,12vpn.com,Global
@@ -2980,6 +2982,7 @@ HOST-SUFFIX,helpster.de,Global
 HOST-SUFFIX,helpzhuling.org,Global
 HOST-SUFFIX,hembed.com,Global
 HOST-SUFFIX,hentai.to,Global
+HOST-SUFFIX,hentai.tv,Global
 HOST-SUFFIX,hentaitube.tv,Global
 HOST-SUFFIX,hentaivideoworld.com,Global
 HOST-SUFFIX,heqinglian.net,Global
@@ -5253,6 +5256,7 @@ HOST-SUFFIX,roadshow.hk,Global
 HOST-SUFFIX,roblox.com,Global
 HOST-SUFFIX,roboforex.com,Global
 HOST-SUFFIX,robustnessiskey.com,Global
+HOST-SUFFIX,roc-taiwan.org,Global
 HOST-SUFFIX,rocket-inc.net,Global
 HOST-SUFFIX,rocket.chat,Global
 HOST-SUFFIX,rocketbbs.com,Global
@@ -5268,6 +5272,7 @@ HOST-SUFFIX,rosechina.net,Global
 HOST-SUFFIX,rotten.com,Global
 HOST-SUFFIX,rou.video,Global
 HOST-SUFFIX,roucdn.link,Global
+HOST-SUFFIX,roushuwo.com,Global
 HOST-SUFFIX,rpglogs.com,Global
 HOST-SUFFIX,rsdlmonitor.com,Global
 HOST-SUFFIX,rsf-chinese.org,Global
@@ -5820,6 +5825,7 @@ HOST-SUFFIX,superfreevpn.com,Global
 HOST-SUFFIX,superpages.com,Global
 HOST-SUFFIX,supervpn.net,Global
 HOST-SUFFIX,superzooi.com,Global
+HOST-SUFFIX,supjav.com,Global
 HOST-SUFFIX,suppig.net,Global
 HOST-SUFFIX,support.futunn.com,Global
 HOST-SUFFIX,supremecourt.gov,Global
@@ -5870,6 +5876,7 @@ HOST-SUFFIX,tafm.org,Global
 HOST-SUFFIX,tagwa.org.au,Global
 HOST-SUFFIX,tagwalk.com,Global
 HOST-SUFFIX,tahr.org.tw,Global
+HOST-SUFFIX,taiav.com,Global
 HOST-SUFFIX,tails.net,Global
 HOST-SUFFIX,taipeisociety.org,Global
 HOST-SUFFIX,taipeitimes.com,Global
@@ -5879,6 +5886,7 @@ HOST-SUFFIX,taiwanbible.com,Global
 HOST-SUFFIX,taiwancon.com,Global
 HOST-SUFFIX,taiwandaily.net,Global
 HOST-SUFFIX,taiwandc.org,Global
+HOST-SUFFIX,taiwanembassy.org,Global
 HOST-SUFFIX,taiwanhot.net,Global
 HOST-SUFFIX,taiwanjustice.com,Global
 HOST-SUFFIX,taiwanjustice.net,Global
@@ -7010,6 +7018,7 @@ HOST-SUFFIX,wsj.com,Global
 HOST-SUFFIX,wsj.net,Global
 HOST-SUFFIX,wsjhk.com,Global
 HOST-SUFFIX,wtbn.org,Global
+HOST-SUFFIX,wtfpass.com,Global
 HOST-SUFFIX,wtfpeople.com,Global
 HOST-SUFFIX,wuerkaixi.com,Global
 HOST-SUFFIX,wufafangwen.com,Global
