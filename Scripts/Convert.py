@@ -272,7 +272,8 @@ def convert_rules(ruleset, target_platform):
                     output.append(f"  - '{rule_value}'")
                 return output
             if ruleset_types <= {"IP-CIDR", "IP-CIDR6"}:
-                output.extend(f"  - '{rule.value}'" for rule in ruleset.rules)
+                for rule in ruleset.rules:
+                    output.extend(f"  - '{rule.value}'")
                 return output
         for rule in ruleset.rules:
             rule_type = type_mapping[rule.type]
